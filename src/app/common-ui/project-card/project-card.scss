@@ -1,0 +1,182 @@
+.project-card {
+  border: 1px solid var(--light-color);
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap:32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.avatar-name {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-gap: 20px;
+}
+
+.project-header {
+  display: block;
+  text-align: center;
+  z-index: -111;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 1.8rem;
+  color: #3add6c;
+}
+.project-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card-content {
+  display: grid;
+  border-radius: 12px;
+  padding: 32px 24px;
+  grid-template-columns: 4fr 2fr;
+  grid-gap: 32px;
+  margin: 10px;
+}
+
+.bracket-box {
+  width: 90%;
+  height: 70px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.inverted-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  filter: invert(1);
+}
+
+.cards-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.background-kitten {
+  position: absolute;
+  top: -350px;
+  left: -100px;
+  background-image: url('/assets/img/kit.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 650px;
+  height: 400px;
+  z-index: -10;
+  pointer-events: none;
+  transform: rotate(-3deg);
+}
+
+.kitten-wrapper {
+  position: relative;
+  width: 100%;
+}
+.project-footer-image-wrapper {
+  max-width: 1200px;
+  margin: -200px 50px 77px 575px;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+}
+
+.project-footer-image {
+
+  height: auto;
+  max-width: none;
+  min-width: 500px;
+  width: 100%;
+  object-fit: contain;
+}
+
+
+.title {
+  color: #4fc3f7;
+}
+
+.key {
+  color: #1793d1;
+  font-weight: bold;
+}
+
+.color-squares {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.color-square {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #222;
+  border: 1px solid #00ffff;
+  transition: 0.4s;
+  border-radius: 34px;
+  box-shadow: 0 0 4px #00ffff88;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
+  background-color: #00ffff;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ffff;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #004d4d;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+@keyframes comic-pop {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(1deg); }
+  50% { transform: scale(0.95) rotate(-2deg); }
+  75% { transform: scale(1.05) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+

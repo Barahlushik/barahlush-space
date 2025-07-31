@@ -1,0 +1,87 @@
+<div class="card-container" id="about" >
+  <div class="card-content">
+    <div class="text-block">
+      <h1 class="brand-header">\/\/\/\/\/\/\/\<br>>> BARAHLUSH << <br><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span> \(^w^)/</h1>
+      <p>I'm Mark — a backend developer with a strong WEB-full mindset and passion for scalable systems. My primary background is in Java and C#. <br><br>
+        Tech Stack:<br>
+         ❤ Java & Spring Ecosystem<br>
+         ❤ C# & .NET Core<br>
+         ❤ REST,g-RPC<br>
+        <p>I'm especially interested in high-load microservice architectures and cloud-native solutions</p>
+      <p>Alma mater: ITMO University CSE'27</p>
+      <p>Main OS: Arch Linux x86_64  <span class="neofetch-label">neofetch</span>
+
+        <label class="toggle-switch">
+          <input type="checkbox" [(ngModel)]="showTerminal" />
+          <span class="slider"></span>
+        </label></p>
+
+
+      <pre *ngIf="showTerminal" class="terminal">
+  <span class="title">                   -`                    </span>barahlush&#64;melchior<span class="title"></span>
+  <span class="title">                  .o+`                   </span>------------------
+  <span class="title">                 `ooo/                   </span><span class="key">OS:</span> Arch Linux x86_64
+  <span class="title">                `+oooo:                  </span><span class="key">Host:</span> NBLK-WAX9X M1010
+  <span class="title">               `+oooooo:                 </span><span class="key">Kernel:</span> 6.15.2-arch1-1
+  <span class="title">               -+oooooo+:                </span><span class="key">Uptime:</span> 3 days, 12 hours, 38 mins
+  <span class="title">             `/:-:++oooo+:               </span><span class="key">Packages:</span> 1185 (pacman), 10 (flatpak)
+  <span class="title">            `/++++/+++++++:              </span><span class="key">Shell:</span> fish 4.0.2
+  <span class="title">           `/++++++++++++++:             </span><span class="key">Resolution:</span> 1920x1080
+  <span class="title">          `/+++ooooooooooooo/`           </span><span class="key">WM:</span> bspwm
+  <span class="title">         ./ooosssso++osssssso+`          </span><span class="key">Theme:</span> Tokyonight-Dark-Storm-B-MB [GTK2/3]
+  <span class="title">        .oossssso-````/ossssss+`         </span><span class="key">Icons:</span> Adwaita [GTK2/3]
+  <span class="title">       -osssssso.      :ssssssso.        </span><span class="key">Terminal:</span> alacritty
+  <span class="title">      :osssssss/        osssso+++.       </span><span class="key">CPU:</span> AMD Ryzen 5 3500U with Radeon Vega
+  <span class="title">     /ossssssss/        +ssssooo/-       </span><span class="key">GPU:</span> AMD ATI Radeon Vega Series
+  <span class="title">   `/ossssso+/:-        -:/+osssso+-     </span><span class="key">Memory:</span> 6044MiB / 6862MiB
+  <span class="title">  `+sso+:-`                 `.-/+oso:    </span>
+  <span class="title"> `++:.                           `-/+/   </span>
+  <span class="title"> .`                                 `/    </span>
+  <div class="color-squares">
+    <div class="color-square" style="background-color: #1793d1;"></div>
+    <div class="color-square" style="background-color: #5daeea;"></div>
+    <div class="color-square" style="background-color: #81bce9;"></div>
+    <div class="color-square" style="background-color: #a4cbee;"></div>
+    <div class="color-square" style="background-color: #b8d7f4;"></div>
+    <div class="color-square" style="background-color: #d0e6f8;"></div>
+    <div class="color-square" style="background-color: #ecf6fc;"></div>
+  </div>
+</pre>
+      <p>Location now: <span class="city" (click)="toggleMap($event)">Saint-P, my home </span><i class="fa-solid fa-hand-point-left" style="font-size: 20px;"></i></p>
+      <div
+        *ngIf="showMap"
+        class="popup-wrapper"
+        [ngStyle]="{ top: mapY + 'px', left: mapX + 'px' }"
+      >
+        <app-map-popup [lat]="59.925628" [lng]="30.340563"></app-map-popup>
+      </div>
+      <p></p>
+      <div class="social-icons">
+        <a href="http://google.com" text="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="http://google.com" text="">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="http://google.com" text="VKontakte">
+          <i class="fab fa-vk"></i>
+        </a>
+        <a href="http://google.com" text="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="http://google.com" text="">
+          <i class="fas fa-envelope-open-text"></i>
+        </a>
+        <a href="http://google.com" text="">
+          <i class="fas fa-id-badge"></i>
+        </a>
+      </div>
+    </div>
+    <div class="photo-block">
+      <img src="/assets/img/my_pic_with_logo.png" alt="Mark"/>
+    </div>
+    <div class="pixel-wave-wrapper">
+      <img src="/assets/img/wheel.png" alt="Wave" class="pixel-wave">
+    </div>
+  </div>
+</div>

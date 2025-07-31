@@ -1,0 +1,86 @@
+.shoutbox-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 24px;
+  color: #d6b5ff;
+  font-family: 'Courier New', monospace;
+}
+
+.shoutbox-title {
+  text-align: center;
+  color: #c792ea;
+  margin-bottom: 0.5rem;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.shoutbox-form {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.shout-input {
+  flex-grow: 1;
+  background: #111;
+  border: 1px solid #fff;
+  color: #d6b5ff;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  resize: vertical;
+  min-height: 50px;
+}
+
+.shout-submit {
+  background: none;
+  border: 1px solid #fff;
+  color: #00ffff;
+  font-size: 24px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  align-self: stretch;
+}
+
+.shout-submit:hover {
+  background-color: #00ffff22;
+}
+
+.private-checkbox {
+  font-size: 0.9rem;
+  color: #aaa;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.shoutbox-messages {
+  margin-top: 24px;
+}
+
+.shout-message {
+  background: #111;
+  border: 1px solid #fff;
+  padding: 12px;
+  margin-bottom: 12px;
+  color: #e1d7ff;
+}
+
+.shout-message .meta {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.shout-message .reply {
+  color: #b39ddb;
+  font-style: italic;
+}

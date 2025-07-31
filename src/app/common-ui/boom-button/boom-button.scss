@@ -1,0 +1,29 @@
+.boom-button {
+  all: unset;
+  padding: 0;
+  color: black;
+  font-size: 12px;
+  display: inline-block;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  border: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><polygon points="100,0 120,40 180,30 140,80 200,100 140,120 180,170 120,160 100,200 80,160 20,170 60,120 0,100 60,80 20,30 80,40" fill="white" stroke="black" stroke-width="5" transform="rotate(90 100 100)" /></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform 0.15s ease-in-out;
+}
+.boom-button strong {
+  position: relative;
+  z-index: 2;
+}
+.boom-button:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.boom-button:active {
+  animation: comic-pop 0.2s ease-in-out;
+}
