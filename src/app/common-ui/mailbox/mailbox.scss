@@ -1,0 +1,124 @@
+.mailbox-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 24px;
+  color: #f5e3c3;
+  background-color: transparent;
+  font-family: 'Courier New', monospace;
+}
+
+.mailbox-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 1.8rem;
+  color: #d89f38;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.mailbox-form {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.mail-input {
+  flex-grow: 1;
+  background: #1a1a1a;
+  border: 1px solid #FFFFFF;
+  color: #f5e3c3;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  resize: vertical;
+  min-height: 50px;
+}
+
+
+.mail-submit {
+  background-color: #0a0a0a;
+  border: 1px solid #FFFFFF;
+  color: #d89f38;
+  font-size: 24px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  align-self: stretch;
+}
+
+.mail-submit:hover {
+  background-color: #d89f38;
+  color: #0a0a0a;
+}
+
+.private-checkbox {
+  font-size: 0.9rem;
+  color: #888;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.mailbox-messages {
+  margin-top: 24px;
+}
+
+.mail-message {
+  background: #111;
+  border: 1px solid #FFFFFF;
+  padding: 12px;
+  margin-bottom: 12px;
+  color: #f5e3c3;
+  border-radius: 8px;
+}
+
+.mail-message .meta {
+  font-size: 0.75rem;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.mail-message .reply {
+  color: #ffc07c;
+  font-style: italic;
+}
+
+.sun-wrapper {
+  max-width: 600px;
+  margin: -350px 27px 86px -500px;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+}
+
+.sun {
+  height: 600px;
+  max-width: 550px;
+  min-width: 500px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.meme-wrapper {
+  max-width: 1200px;
+  margin: 133px 27px 86px 600px;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+}
+
+.meme {
+  height: 500px;
+  max-width: 500px;
+  min-width: 500px;
+  width: 100%;
+  object-fit: contain;
+}

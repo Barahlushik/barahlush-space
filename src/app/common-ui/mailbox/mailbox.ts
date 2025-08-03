@@ -3,17 +3,17 @@ import {NgForOf, NgIf} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
-  selector: 'shoutbox',
+  selector: 'mailbox',
   imports: [
     NgForOf,
     NgIf,
     ReactiveFormsModule,
     FormsModule
   ],
-  templateUrl: './shoutbox.html',
-  styleUrl: './shoutbox.scss'
+  templateUrl: './mailbox.html',
+  styleUrl: './mailbox.scss'
 })
-export class Shoutbox {
+export class Mailbox {
   isPrivate = false;
   newShout = '';
   shouts: { date: string; message: string; reply?: string }[] = [

@@ -3,8 +3,8 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {MapPopupComponent} from '../map-popup/map-popup';
 import {BoomButton} from '../boom-button/boom-button';
-import {Shoutbox} from '../shoutbox/shoutbox';
 import {AboutMe} from '../about-me/about-me';
+import {Mailbox} from '../mailbox/mailbox';
 
 @Component({
   selector: 'app-project-card',
@@ -13,8 +13,8 @@ import {AboutMe} from '../about-me/about-me';
     CommonModule,
     MapPopupComponent,
     BoomButton,
-    Shoutbox,
-    AboutMe
+    AboutMe,
+    Mailbox
   ],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss'

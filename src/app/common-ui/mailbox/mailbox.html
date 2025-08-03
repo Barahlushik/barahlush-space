@@ -1,0 +1,36 @@
+<div class="mailbox-container">
+  <h2 id="funbox" class="mailbox-title">
+    ___ /\/\/\/\ ___<br>
+    |\/| MAILBOX |\/| <br>
+    TTT\/\/\/\/\/TTT</h2>
+  <p class="disclaimer">// disclaimer: shouts <i>are</i> pre-moderated, but they do not reflect my views.</p>
+  <div class="mailbox-form">
+    <div class="sun-wrapper">
+      <img src="/assets/img/sun-mailbox.png" alt="Wave" class="sun">
+    </div>
+    <div class="meme-wrapper">
+      <img src="/assets/img/meme-face.png" alt="Wave" class="meme">
+    </div>
+    <textarea
+      [(ngModel)]="newShout"
+      placeholder="let the void hear you"
+      rows="2"
+      class="mail-input"
+    ></textarea>
+    <button class="mail-submit" (click)="submitShout()" title="Send">
+      <i class="fa fa-bullhorn"></i>
+    </button>
+  </div>
+  <label class="private-checkbox">
+    <input type="checkbox" [(ngModel)]="isPrivate"/>
+    as private message
+  </label>
+  <div class="mailbox-messages">
+    <div class="mail-message" *ngFor="let shout of shouts; let i = index">
+      <div class="meta">#{{ shouts.length - i }} {{ shout.date }}</div>
+      <div class="text">{{ shout.message }}</div>
+      <div class="reply" *ngIf="shout.reply">reply: {{ shout.reply }}</div>
+    </div>
+  </div>
+</div>
+
