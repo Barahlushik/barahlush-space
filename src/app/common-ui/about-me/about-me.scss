@@ -1,4 +1,4 @@
-.card-container {
+.about-me-container-wrapper {
   position: relative;
   z-index: 2;
   max-width: 1200px;
@@ -6,7 +6,7 @@
   padding: 1rem;
 }
 
-.card-content {
+.about-me-container {
   display: grid;
   border-radius: 12px;
   padding: 32px 24px;
@@ -15,7 +15,7 @@
   margin: 10px;
 }
 
-.text-block {
+.content {
   color: white;
   font-size: 1rem;
   gap: 2rem;
@@ -23,13 +23,11 @@
   max-width: 1000px;
 }
 
-
-.brand-header {
+.textblock-header {
   font-family: "Press Start 2P", system-ui;
   font-size: 1.8rem;
   color: #00ffff;
 }
-
 
 .toggle-switch {
   position: relative;
@@ -105,6 +103,31 @@
 .fas{
   color: #FFFFFF;
 }
+
+.social-icons a[href*="t.me"]:hover i {
+  color: #229ED9; /* Telegram голубой */
+}
+
+.social-icons a[href*="github.com"]:hover i {
+  color: #6e5494; /* GitHub фиолетовый */
+}
+
+.social-icons a[href*="vk.com"]:hover i {
+  color: #0077FF; /* VK синий */
+}
+
+.social-icons a[href*="instagram.com"]:hover i {
+  color: #E1306C; /* Instagram розовый */
+}
+
+.social-icons a[href^="mailto:"]:hover i {
+  color: #ff9900; /* Почта — оранжевый */
+}
+
+.social-icons a[href*="yandex.ru"]:hover i {
+  color: #FFCC00; /* Резюме — жёлтый */
+}
+
 
 .city {
   color: #ba35aa;
