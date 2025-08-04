@@ -6,7 +6,6 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
 const db = new sqlite3.Database('./shouts.db');
 
 db.serialize(() => {
@@ -19,12 +18,15 @@ db.serialize(() => {
   )`);
 });
 
-app.get('/api/shouts', (req, res) => {
+const router = express.Router();
+
+router.get('/shouts', (req, res) => {
   const page = parseInt(req.query.page || '1');
   const size = parseInt(req.query.size || '6');
   const offset = (page - 1) * size;
 
   db.all(`SELECT COUNT(*) as count FROM shouts WHERE isPrivate = 0`, [], (err, countResult) => {
+    if (err) return res.status(500).json({ error: err.message });
     const totalCount = countResult[0].count;
     const totalPages = Math.ceil(totalCount / size);
 
@@ -39,7 +41,7 @@ app.get('/api/shouts', (req, res) => {
   });
 });
 
-app.post('/api/shouts', (req, res) => {
+router.post('/shouts', (req, res) => {
   const { message, isPrivate } = req.body;
   const date = new Intl.DateTimeFormat('sv-SE', {
     timeZone: 'Europe/Moscow',
@@ -55,9 +57,10 @@ app.post('/api/shouts', (req, res) => {
     [date, message, isPrivate ? 1 : 0],
     function (err) {
       if (err) return res.status(500).json({ error: err.message });
-      res.json({ success: true });
+      res.json({ success: true, id: this.lastID });
     }
   );
 });
 
+app.use('/api', router);
 app.listen(4444, () => console.log('Server running on http://localhost:4444'));

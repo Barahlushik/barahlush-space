@@ -36,15 +36,14 @@ export class Mailbox implements OnInit {
 
   getShouts(page = 1, size = 6) {
     return this.http.get<{ messages: any[], totalPages: number, currentPage: number }>(
-      `http://localhost:4444/api/shouts?page=${page}&size=${size}`
+      `/api/shouts?page=${page}&size=${size}`
     );
   }
 
   submitShout() {
     const trimmed = this.newShout.trim();
     if (!trimmed) return;
-
-    this.http.post('http://localhost:4444/api/shouts', {
+    this.http.post('/api/shouts', {
       message: trimmed,
       isPrivate: this.isPrivate
     }).subscribe(() => {

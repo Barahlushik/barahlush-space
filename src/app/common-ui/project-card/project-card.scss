@@ -178,4 +178,34 @@
   100% { transform: scale(1) rotate(0deg); }
 }
 
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.pagination-button {
+  background: none;
+  border: 1px solid #ffffff;
+  color: #f4f4f4;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: "Press Start 2P", system-ui;
+  transition: 0.2s ease-in-out;
+}
+
+.pagination-button:hover {
+  background-color: #3add6c;
+  color: #000;
+}
+
+#pageIndicator {
+  min-width: 48px;
+  text-align: center;
+}
 
