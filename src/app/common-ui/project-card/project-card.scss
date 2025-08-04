@@ -87,17 +87,16 @@
 }
 .project-footer-image-wrapper {
   max-width: 1200px;
-  margin: -200px 50px 77px 575px;
+  margin: -200px 50px 77px 552px;
   text-align: center;
   z-index: -1;
   position: absolute;
 }
 
 .project-footer-image {
-
-  height: auto;
-  max-width: none;
-  min-width: 500px;
+  height: 800px;
+  max-width: 700px;
+  min-width: 700px;
   width: 100%;
   object-fit: contain;
 }

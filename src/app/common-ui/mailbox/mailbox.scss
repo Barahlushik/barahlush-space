@@ -63,11 +63,10 @@
 .private-checkbox {
   font-size: 0.9rem;
   color: #888;
-  display: block;
-  margin-bottom: 24px;
+  margin: 0;
 }
-
 .mailbox-messages {
+  white-space: pre-line;
   margin-top: 24px;
 }
 
@@ -121,4 +120,36 @@
   min-width: 500px;
   width: 100%;
   object-fit: contain;
+}
+
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+  color: #aaa;
+}
+
+.pagination button {
+  background: none;
+  color: #d89f38;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.private-pagination-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
 }

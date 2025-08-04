@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 @Component({
   selector: 'mailbox',
   imports: [
+    HttpClientModule,
     NgForOf,
     NgIf,
     ReactiveFormsModule,
@@ -13,40 +14,55 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   templateUrl: './mailbox.html',
   styleUrl: './mailbox.scss'
 })
-export class Mailbox {
+export class Mailbox implements OnInit {
+  constructor(private http: HttpClient) {}
   isPrivate = false;
   newShout = '';
-  shouts: { date: string; message: string; reply?: string }[] = [
-    {
-      date: '2025-07-14 14:26',
-      message: 'there was Rasim Eminemov'
-    },
-    {
-      date: '2025-07-11 20:11',
-      message: 'we are all watching the fragrant flower blooms with dignity!!',
-      reply: 'wanna watch it together? 👀'
-    },
-    {
-      date: '2025-07-07 22:18',
-      message: 'как же хочется мачика'
-    },
-    {
-      date: '2025-07-09 14:38',
-      message: 'пинг'
-    },
-    {
-      date: '2025-07-06 02:39',
-      message: 'Hello',
-      reply: 'hiiii:3'
-    }
-  ];
+  shouts: any[] = [];
+  currentPage = 1;
+  totalPages = 1;
+
+  ngOnInit() {
+    this.loadPage(1);
+  }
+
+  loadPage(page: number) {
+    this.getShouts(page).subscribe(res => {
+      this.shouts = res.messages;
+      this.currentPage = res.currentPage;
+      this.totalPages = res.totalPages;
+    });
+  }
+
+  getShouts(page = 1, size = 6) {
+    return this.http.get<{ messages: any[], totalPages: number, currentPage: number }>(
+      `http://localhost:4444/api/shouts?page=${page}&size=${size}`
+    );
+  }
 
   submitShout() {
-    if (this.newShout.trim()) {
-      const now = new Date();
-      const dateStr = now.toISOString().slice(0, 16).replace('T', ' ');
-      this.shouts.unshift({ date: dateStr, message: this.newShout.trim() });
+    const trimmed = this.newShout.trim();
+    if (!trimmed) return;
+
+    this.http.post('http://localhost:4444/api/shouts', {
+      message: trimmed,
+      isPrivate: this.isPrivate
+    }).subscribe(() => {
       this.newShout = '';
+      this.loadPage(1);
+    });
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.loadPage(this.currentPage + 1);
     }
   }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.loadPage(this.currentPage - 1);
+    }
+  }
+
 }
