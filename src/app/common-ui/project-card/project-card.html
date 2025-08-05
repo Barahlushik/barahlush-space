@@ -27,8 +27,7 @@
     <div class="project-card-tags">
       <div *ngFor="let tag of card.tags" class="skill-tag">{{ tag }}</div>
     </div>
-
-    <boom-button></boom-button>
+    <boom-button [url]="card.sourceUrl"></boom-button>
   </div>
 </div>
 <div class="pagination-controls">
